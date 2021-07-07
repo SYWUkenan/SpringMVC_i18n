@@ -23,8 +23,16 @@
 
     <!--注解驱动，比加，配置访问静态资源 -->
     <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:resources mapping="/assets/**" location="/WEB-INF/static/"></mvc:resources>
 
-
+    <!--设计国际化支持，支持国家化文件-->
+    <bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
+        <property name="basenames">
+            <array>
+                <value>i18n/login</value>
+            </array>
+        </property>
+    </bean>
 
 
 </beans>
