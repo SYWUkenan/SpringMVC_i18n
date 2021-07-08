@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <% request.setAttribute("basepath",request.getContextPath());%>
 <!doctype html>
 <html>
@@ -41,7 +42,7 @@
 <body class="text-center">
 
 <main class="form-signin">
-    <form>
+    <form:form action="${basepath}/login" method="post" modelAttribute="user">
         <img class="mb-4" src="${basepath}/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal"><spring:message code="txt.welcome"></spring:message> </h1>
         <div class="row">
@@ -56,12 +57,14 @@
             <a class="col-md-6" href="?locale=en_US">英文拦截器</a>
         </div>
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput"><spring:message code="txt.email"></spring:message></label>
+            <form:errors path="email"></form:errors>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword"><spring:message code="txt.Login"></spring:message></label>
+            <form:errors path="password"></form:errors>
         </div>
 
         <div class="checkbox mb-3">
@@ -69,9 +72,10 @@
                 <input type="checkbox" value="remember-me"> <spring:message code="txt.remember"></spring:message>
             </label>
         </div>
+        ${errorMsg}
         <button class="w-100 btn btn-lg btn-primary" type="submit"><spring:message code="txt.Login"></spring:message> </button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-    </form>
+    </form:form>
 </main>
 
 

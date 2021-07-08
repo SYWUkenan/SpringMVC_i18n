@@ -1,5 +1,6 @@
 package cn.yswu.controller;
 
+import cn.yswu.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,7 @@ import java.util.Locale;
 public class I18NController {
 
     @RequestMapping("i18n")
-    public String i18n() {
+    public String i18n(User user) {
         return "login";
     }
 
