@@ -34,5 +34,18 @@
         </property>
     </bean>
 
+    <!--方式二：使用sessionlocale 保持locale的状态-->
+    <bean class="org.springframework.web.servlet.i18n.SessionLocaleResolver" id="localeResolver">
+
+    </bean>
+
+    <!--方式一：使用springmvc提供的拦截器，接收local 参数(en_US,zh_Cn)  设置到session中去-->
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+
+        </bean>
+    </mvc:interceptors>
+
+
 
 </beans>

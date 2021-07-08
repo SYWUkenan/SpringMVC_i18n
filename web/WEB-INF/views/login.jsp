@@ -44,7 +44,17 @@
     <form>
         <img class="mb-4" src="${basepath}/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal"><spring:message code="txt.welcome"></spring:message> </h1>
+        <div class="row">
 
+            <a class="col-md-6" href="${basepath}/i18n/zh_CN">中文</a>
+            <a class="col-md-6" href="${basepath}/i18n/en_US">英文</a>
+        </div>
+
+        <div class="row">
+
+            <a class="col-md-6" href="?locale=zh_CN">中文拦截器</a>
+            <a class="col-md-6" href="?locale=en_US">英文拦截器</a>
+        </div>
         <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput"><spring:message code="txt.email"></spring:message></label>
